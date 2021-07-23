@@ -2,6 +2,7 @@
 /*    */ 
 /*    */ import org.bukkit.event.EventHandler;
 /*    */ import org.bukkit.event.Listener;
+import org.bukkit.plugin.java.JavaPlugin;
 /*    */ import org.bukkit.event.player.PlayerJoinEvent;
 /*    */ import rien.bijl.Scoreboard.r.Board.BoardPlayer;
 /*    */ import rien.bijl.Scoreboard.r.Plugin.Session;
@@ -16,6 +17,8 @@
 /*    */ {
 /*    */   @EventHandler
 /*    */   public void onJoin(PlayerJoinEvent event) {
+	BoardPlayer.getBoardPlayer(event.getPlayer()).setEnabled(true);
+	event.getPlayer().sendMessage("JoinListener");
 /* 19 */     if (event.getPlayer().isOp() && (Session.getSession()).alertOutOfDate) {
 /* 20 */       event.getPlayer().sendMessage(i18n.get("misc.outofdate"));
 /*    */     }
@@ -26,6 +29,8 @@
 /*    */     
 /* 27 */     BoardPlayer.getBoardPlayer(event.getPlayer()).attachConfigBoard((Session.getSession()).defaultBoard);
 			BoardPlayer.getBoardPlayer(event.getPlayer()).setEnabled(true);
+			
+			event.getPlayer().sendMessage("JoinListener");
 /*    */   }
 /*    */ }
 

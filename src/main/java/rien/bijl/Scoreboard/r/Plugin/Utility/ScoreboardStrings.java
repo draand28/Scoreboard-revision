@@ -1,6 +1,7 @@
 /*    */ package rien.bijl.Scoreboard.r.Plugin.Utility;
 /*    */ 
 /*    */ import java.util.ArrayList;
+import org.bukkit.plugin.java.JavaPlugin;
 /*    */ import java.util.List;
 /*    */ import java.util.regex.Matcher;
 /*    */ import java.util.regex.Pattern;

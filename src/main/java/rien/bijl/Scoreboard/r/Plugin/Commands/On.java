@@ -3,6 +3,11 @@
 /*    */ import org.bukkit.entity.Player;
 /*    */ import rien.bijl.Scoreboard.r.Board.BoardPlayer;
 /*    */ import rien.bijl.Scoreboard.r.Plugin.Utility.i18n;
+import org.bukkit.event.EventHandler;
+/*    */ import org.bukkit.event.Listener;
+import org.bukkit.plugin.java.JavaPlugin;
+/*    */ import org.bukkit.event.player.PlayerJoinEvent;
+/*    */ import rien.bijl.Scoreboard.r.Plugin.Session;
 /*    */ 
 /*    */ 
 /*    */ public class On
@@ -20,6 +25,8 @@
 /*    */     } 
 /* 21 */     BoardPlayer.getBoardPlayer(player).setEnabled(true);
 /* 22 */     player.sendMessage(i18n.get("commands.toggleon"));
+             player.getPlayer().sendMessage("ON");
+
 /*    */   }
 /*    */ }
 
